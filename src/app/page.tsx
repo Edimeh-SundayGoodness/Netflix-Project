@@ -1,13 +1,16 @@
 'use client';
-import { Box, Text, HStack, VStack, Image, Input } from "@chakra-ui/react";
+import { Box, Text, HStack, VStack, Image, Input, Stack } from "@chakra-ui/react";
 import ButtonHolder from "../../src/app/components/shared/button";
+import ScrollGallery from "./components/gallery";
+import Reasons from "./components/reasons";
  
 export default function HomePage() {
   return (
     <Box>
       <Box
         position="relative"
-        h="45em"
+        h={{base:"30em", lg:"45em"}}
+        w={{base:"19em", lg:"auto"}}
         backgroundImage="url('https://i.pinimg.com/originals/19/8b/2f/198b2f01e73b905772279616eccc7c65.jpg')"
         backgroundSize="cover"
         backgroundPosition="center"
@@ -22,6 +25,7 @@ export default function HomePage() {
           bottom="0"
           bg="black"
           opacity="0.6"
+          w={{base:"19em", lg:"auto"}}
         />
           {/* Content on top of overlay */}
           <VStack
@@ -33,7 +37,6 @@ export default function HomePage() {
               <Image src={'logo.png'}
                 alt='netflix logo'
                 width={{base:"11em", md:"15em"}}
-                ml={{base:"-3em"}} 
                 mt={{base:"-1.5em"}}
               />
               <Text
@@ -45,7 +48,6 @@ export default function HomePage() {
                 borderRadius="0.2em"
                 textAlign="center"
                 ml={{md:"50em"}}
-                mr={{base:"3em"}} 
                 mt={{base:"-2em", md:"-3em"}}
               >
                 Sign In
@@ -54,8 +56,8 @@ export default function HomePage() {
             <Box
               color="white"
               textAlign="center"
-              ml={{base:"-3.5em", md:"30em"}}
-              mr={{base:"1em", md:"30em"}}
+              ml={{base:"0em", md:"30em"}}
+              mr={{base:"0em", md:"30em"}}
               w={{base:"17em", md:"40em"}}
             >
               <Text
@@ -73,15 +75,19 @@ export default function HomePage() {
               <Text pt="2em">
                 Ready to watch?, Enter your email to create or start your membership.
               </Text>
-              <HStack mt="1em">
+              <Stack 
+                mt="1em"
+                direction={{base:"column", md:"row"}}
+                justifySelf={{base:"center"}}
+              >
                 <Input 
-                  w="18em"
-                  h="2.5em" 
+                  w={{base:"10em", md:"18em"}}
+                  h={{base:"2.5em", md:"2.5em"}}
                   fontSize="2xl"
                   placeholder="Email address" 
                 />
                 <ButtonHolder/>
-              </HStack>
+              </Stack>
             </Box>
           </VStack>
         <Box/>
@@ -89,20 +95,23 @@ export default function HomePage() {
       <Box
         color="white"
         borderTop="3px solid red"
-        borderTopRadius="10em"
+        borderTopRadius="10%"
         bgColor="black"
         zIndex="2"
         position="relative"
-        top="-7em"
-        h="50em"
+        mt={{base:"0em", md:"-7em"}}
+        h="auto"
+        w={{base:"19em", lg:"auto"}}
       >
         <Text 
-          fontSize="3xl"
-          ml="3em"
-          mt="2em"
+          fontSize="2xl"
+          ml={{base:"1em", lg:"5.5em"}}
+          mt={{base:"1em", lg:"2em"}}
         >
-          Trending Now...
+          Trending Now
         </Text>
+        <ScrollGallery/>
+        <Reasons/>
       </Box>
     </Box>
   );
