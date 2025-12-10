@@ -96,8 +96,8 @@ const ScrollGallery = () => {
                         objectFit="cover"
                         borderRadius="xl"
                         flex="0 0 auto"
-                        w={{ base: "200px", md: "200px" }}
-                        h={{base:"280px", md:"280px"}}
+                        w={{ base: "150px", md: "200px" }}
+                        h={{base:"180px", md:"280px"}}
                         transition="transform 0.3s ease"
                         _hover={{ transform: "scale(1.05)" }}
                     />

@@ -1,5 +1,5 @@
 'use client';
-import { Box, Text, Center } from "@chakra-ui/react";
+import { Box, Text, Center} from "@chakra-ui/react";
 import { FaAngleRight } from "react-icons/fa6";
 
 const ButtonHolder = () =>{
